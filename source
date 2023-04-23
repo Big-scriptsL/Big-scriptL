@@ -1,0 +1,50 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Speed Run Simulator ⚡ script", "BloodTheme")
+
+-- Main
+local AutoFarms = Window:NewTab("Auto Farms")
+local AutoFarmsSection = AutoFarms:NewSection("Auto Farms")
+
+
+AutoFarmsSection:NewButton("Auto farm", "This button gives you speed for doing nothing so good script ah?", function()
+    while wait() do
+        game:GetService("ReplicatedStorage").Remotes.AddSpeed:FireServer()
+        end
+end)
+
+local Pets = Window:NewTab("Pets")
+local PetsSection = Pets:NewSection("Pets")
+
+
+
+PetsSection:NewButton("FREE=PET=Silly icecream", "This button gives you free pets for exact pets like this is  the Silly icecream", function()
+    game:GetService("ReplicatedStorage").Remotes.CanBuyEgg:InvokeServer("Silly Icecream", false)
+end)  
+
+PetsSection:NewButton("FREE=PET=Big Friendly Bumblebee", "This button gives you free pets for exact pets like this is  the Big Friendly Bumblebee", function()
+    game:GetService("ReplicatedStorage").Remotes.CanBuyEgg:InvokeServer("Big Friendly Bumblebee", false)
+end)  
+
+PetsSection:NewButton("FREE=PET=Summer Sheep", "This button gives you free pets for exact pets like this is  the Summer Sheep", function()
+    game:GetService("ReplicatedStorage").Remotes.CanBuyEgg:InvokeServer("Summer Sheep", false)   
+end)  
+
+PetsSection:NewButton("FREE=PET=Earth Butterfly", "This button gives you free pets for exact pets like this is  the Earth Butterfly", function()
+    game:GetService("ReplicatedStorage").Remotes.CanBuyEgg:InvokeServer("Earth Butterfly", false)   
+end)  
+
+AutoFarmsSection:NewButton("Auto Orb farm", "This is an Orb farm", function()
+    while wait(0.1) do
+        local orbs = game:GetService("Workspace").GameAssets.GlobalAssets.OrbSpawns
+        for i, v in pairs(orbs:GetChildren()) do
+        if v:IsA("MeshPart") then
+        local user = game.Players.LocalPlayer.Character.Head
+        firetouchinterest(user, v, 0)
+        elseif v:IsA("Model") then
+        local summerOrb = v["Orb.1"]
+        firetouchinterest(game.Players.LocalPlayer.Character.Head, summerOrb, 0)
+        end
+        end
+        end
+    end
+end
